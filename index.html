@@ -4,7 +4,7 @@
 <title>
 login form
 </title>
- 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
 <style>
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 body {
@@ -64,7 +64,7 @@ margin: 0 10px;
 }
 </style>
 </head>
-<body>
+<body ng-app="">
 
 <div class ="login-box">
 <h1>Login</h1>
@@ -72,14 +72,14 @@ margin: 0 10px;
 <div class ="textbox">
   <i class="fa fa-user" aria-hidden="true"></i>
 
-<input type ="text" placeholder= "Username" name="" value="" required>
+<input type ="text" placeholder= "Username" name="" value="" required ng-model="myvar">
 </div>
 <div class ="textbox">
     <i class="fa fa-lock" aria-hidden="true"></i>
 
-<input type ="text" placeholder= "Password" name="" value="" required>
+<input type ="text" placeholder= "Password" name="" value="" required ng-model="myvar2">
 </div>
- <a href="./firstpage.html"><input class ="btn" type="button" name="" value="Sign in"></a>
+ <a href="./firstpage.html"><input class ="btn" type="button" name="" value="Sign in" ng-show="myvar" ng-if="myvar2"></a>
 </div>
 
 </body>
