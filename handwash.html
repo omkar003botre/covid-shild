@@ -4,6 +4,7 @@
     <title>Buy Hand-wash</title>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <style>
         div {
             width: 300px;
@@ -39,7 +40,7 @@
     }
 </script>
 
-<body>
+<body ng-app="">
     <img src="./handwash.jpg"><br><br><br>
     <div>
         <h2>***Product Description***</h2>
@@ -63,10 +64,10 @@
             <input type="text" placeholder="Enter Name" name="name"><br><br>
             <input placeholder="Enter your address" type="text" name="address"><br><br>
             <input placeholder="Enter your Phone number" type="tel" id="phone" pattern="[0-9]{10}" name="phno"><br><br>
-            <button type="submit">Place Order</button>
+            <button type="submit" ng-model="myvar">Place Order</button>
             <button type="reset">Cancle Order</button>
         </form>
-        <a href="./id.html"><button>click here to get recipt</button></a>
+        <a href="./id.html"><button ng-show="myvar">click here to get recipt</button></a>
     </div>
     <script src="./product.js"></script>
     <a href="./firstpage.html"><button>Back</button></a>
