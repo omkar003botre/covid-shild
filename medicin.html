@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Buy Medicin</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <style>
+        div {
+            width: 300px;
+            border: 15px solid hotpink;
+            padding: 50px;
+            margin: 20px;
+        }
+        
+        .u {
+            width: 300px;
+            border: 15px solid pink;
+            padding: 50px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<script>
+    function validateForm() {
+        var x = document.forms["myForm"]["name"].value;
+
+        if (x == "") {
+            alert("Name must be filled out");
+            document.myForm.name.focus();
+            return false;
+        }
+        var ph = document.forms["myForm"]["phno"].value;
+
+        if (ph == "" || (ph.length < 10 && ph.length > 10)) {
+            alert("Please Enter valid Mobile number ");
+
+            return false;
+        }
+    }
+</script>
+
+<body>
+    <img src="./medicin.jpg"><br><br><br>
+    <div>
+        <h2>Product Description</h2>
+        <h3>A generic term for any product used to diagnose or manage patients. Examples. Exam gloves, swabs, mattresses, lab products, protective garments, drains, dressings, etc.</h3>
+        <ul>
+            <li>Price :Cash on delivary</li>
+        </ul>
+    </div>
+    <div class="g">
+        <form id="fo" name="myForm" name="myForm" onsubmit="return validateForm()">
+            <h2>Place Oreder</h2>
+
+            <input type="text" placeholder="Enter product name" name="product"><br><br>
+            <input type="text" placeholder="Enter Name" name="name"><br><br>
+            <input placeholder="Enter your address" type="text" name="address"><br><br>
+            <input placeholder="Enter your Phone number" type="tel" id="phone" pattern="[0-9]{10}" name="phno"><br><br>
+            <button type="submit">Place Order</button>
+            <button type="reset">Cancle Order</button>
+
+        </form>
+    </div>
+
+    <script src="./product.js"></script>
+    <a href="./firstpage.html"><button>Back</button></a>
+
+</body>
+<script>
+    var pr = document.getElementById("or");
+    var app = angular.module("myApp", []);
+
+    app.controller("myCtrl", function($scope) {
+        $scope.price = {
+            {
+                pc * pr
+            }
+        };
+    });
+</script>
+
+</html>

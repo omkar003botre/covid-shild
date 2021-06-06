@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title>Buy PPE</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <style>
+        div {
+            width: 300px;
+            border: 15px solid blue;
+            padding: 50px;
+            margin: 20px;
+        }
+        
+        .g {
+            width: 300px;
+            border: 15px solid orange;
+            padding: 50px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<script>
+    function validateForm() {
+        var x = document.forms["myForm"]["name"].value;
+
+        if (x == "") {
+            alert("Name must be filled out");
+            document.myForm.name.focus();
+            return false;
+        }
+        var ph = document.forms["myForm"]["phno"].value;
+
+        if (ph == "" || (ph.length < 10 && ph.length > 10)) {
+            alert("Please Enter valid Mobile number ");
+
+            return false;
+        }
+    }
+</script>
+
+<body>
+    <img src="./ppe.jpeg"><br><br><br>
+    <div>
+        <h2>Product Description</h2>
+        <h3>Designed to protect you against harmful viruses, bacteria, infections and to prevent contact with infectious agent or body fluid, the PPE or <br>the Personal Protective Equipment kit contains all essentials to avoid any bodily exposure to such
+            infectious material.</h3>
+        <ul>
+            <li>Price :₹549</li>
+        </ul>
+    </div>
+    <div class="f">
+        <form id="fo" name="myForm" name="myForm" onsubmit="return validateForm()">
+            <h2>Place Oreder</h2>
+
+            <input type="text" placeholder="Enter product name" name="product"><br><br>
+            <input type="text" placeholder="Enter Name" name="name"><br><br>
+            <input placeholder="Enter your address" type="text" name="address"><br><br>
+            <input placeholder="Enter your Phone number" type="tel" id="phone" pattern="[0-9]{10}" name="phno"><br><br>
+            <button type="submit">Place Order</button>
+            <button type="reset">Cancle Order</button>
+
+        </form>
+    </div>
+    <script src="./product.js"></script>
+    <a href="./firstpage.html"><button>Back</button></a>
+</body>
+
+
+</html>

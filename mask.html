@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>Buy Mask</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <style>
+        div {
+            width: 300px;
+            border: 15px solid blue;
+            padding: 50px;
+            margin: 20px;
+        }
+        
+        .d {
+            width: 300px;
+            border: 15px solid red;
+            padding: 50px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<script>
+    function validateForm() {
+        var x = document.forms["myForm"]["name"].value;
+
+        if (x == "") {
+            alert("Name must be filled out");
+            document.myForm.name.focus();
+            return false;
+        }
+        var ph = document.forms["myForm"]["phno"].value;
+
+        if (ph == "" || (ph.length < 10 && ph.length > 10)) {
+            alert("Please Enter valid Mobile number ");
+
+            return false;
+        }
+    }
+</script>
+
+<body>
+    <img src="./mask.jpg"><br><br><br>
+
+    <div class="d">
+        <h2>*** Product Description *** </h2>
+        <h3>Disposable Non-Woven medical Face Mask with high level of bacterial filtration efficiency designed to reduce the transfer of bacteria <br>and particles from and/or to the mouth and <br>nose of the wearer, reducing the risk of infection, while
+            ensuring high comfort and breath ability. </h3>
+        <ul>
+            <li>Price:100 Rs.</li>
+            <li>Color:Blue,white,green,black,grey</li>
+            <li>The masks weigh 3.5 grams per piece.</li>
+            <li>The material most commonly used to make them is polypropylene, <br>either 20 or 25 grams per square meter (gsm) in density.<br> Masks can also be made of polystyrene, polycarbonate, polyethylene, or polyester.</li>
+        </ul>
+    </div>
+    <div class="f">
+        <form id="fo" name="myForm" name="myForm" onsubmit="return validateForm()">
+            <h2>Place Oreder</h2>
+
+            <input type="text" placeholder="Enter product name" name="product"><br><br>
+            <input type="text" placeholder="Enter Name" name="name"><br><br>
+            <input placeholder="Enter your address" type="text" name="address"><br><br>
+            <input placeholder="Enter your Phone number" type="tel" id="phone" pattern="[0-9]{10}" name="phno"><br><br>
+            <button type="submit">Place Order</button>
+            <button type="reset">Cancle Order</button>
+
+        </form>
+    </div>
+    <script src="./product.js"></script>
+    <a href="./firstpage.html"><button>BACK</button></a>
+</body>
+
+
+</html>
